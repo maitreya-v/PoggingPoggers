@@ -1,0 +1,7 @@
+
+.sideMenuButton {
+    display: flex;
+    justify-content: center;
+    /* color: blueviolet !important; */
+    font-size: 40px !important;
+}
