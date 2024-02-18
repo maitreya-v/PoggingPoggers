@@ -1,4 +1,4 @@
-1 - Scrapped user reviews from Zomato and Swiggy to develop a rich dataset containing various various helpful features and attributes having key insights :
+1 - Scraped user reviews from Zomato and Swiggy to develop a rich dataset containing various various helpful features and attributes having key insights :
 includes location based filtering to optimize the results
 2 - Analyze strength and weakness of cafe : 
 using different key words mentioned in the scrapped data as features for deciding the strength / weakness of cafe
