@@ -1,2 +1,5 @@
-Ai chatbot based recommendation system.
-User is able to purchase items and get recommendations by just chatting with AI, no need to manually peruse the website.
+Developed a user-friendly chatbot interface for exploring cafe menus interactively.
+Provided personalized recommendations based on menu items and user preferences.
+Assisted users in discovering new menu items and accommodated dietary restrictions.
+Leveraged user order history to offer tailored suggestions.
+Allowed users to add favorite items to their carts seamlessly, enhancing the ordering process.
