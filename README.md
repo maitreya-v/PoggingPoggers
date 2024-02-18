@@ -1,13 +1,14 @@
 The cafe, Ettarra Coffee, aims to enhance its operations, decision-making, and customer engagement strategies by leveraging data analytics and AI. To achieve this, the following steps have been taken:
 
 1. Customer Reviews and Competitor Analysis:
-   - Web scraping techniques have been employed to extract user reviews from platforms like Zomato and Swiggy for Ettarra Coffee and its competitors.
-   - The reviews have been analyzed to understand the strengths and weaknesses of Ettarra Coffee and its competitors. For instance, the analysis revealed that Ettarra Coffee's strength lies in its staff and service, while areas for improvement include ambiance and pricing.
+   - Web Scraping is employed using Selenium to extract user reviews from marketplaces like Zomato and Swiggy for Ettarra Coffee and its competitors.
+   - The reviews have been analyzed to understand the strengths and weaknesses of Ettarra Coffee and its competitors. For instance, the analysis revealed that Ettarra Coffee's strength lies in its staff and service.
    - Competitor data has been compared and contrasted to identify strategic opportunities. For example, it was found that a nearby cafe excels in ambiance, which could be a potential area for Ettarra Coffee to focus on improving.
 
 2. Market Basket Analysis:
    - Transaction data has been analyzed to identify patterns in customer purchasing behavior and associations between products.
-   - This analysis has provided insights into popular menu combinations and opportunities for optimizing menu offerings. For instance, it was discovered that customers who order coffee often pair it with a specific pastry, suggesting the possibility of bundling these items or offering promotions to enhance sales.
+   - This analysis has provided insights into popular menu combinations and opportunities for optimizing menu offerings and inventory.
+   - For instance, it was discovered that customers who order coffee often pair it with a specific pastry, suggesting the possibility of bundling these items or offering promotions to enhance sales.
 
 3. AI Recommender System:
    - A dataset containing customer preferences and order history has been utilized to develop an AI-based recommender system for menu items.
