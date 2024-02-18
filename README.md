@@ -21,9 +21,10 @@ The cafe, Ettarra Coffee, aims to enhance its operations, decision-making, and c
 5. Sales Analysis:
    - Sales data has been examined to identify periods with reduced transaction activity, such as extended weekends when patrons typically travel to other cities.
    - This information has been communicated to the management, enabling them to launch targeted seasonal promotions to address these dips in sales.
+   - We are analyzing sales data by order type so that the cafe can optimize staff shifts.
+   - By analyzing payment types we encourage the cafe to collabarate with certain banks to provide customers with discounts.
 
-6. Utilizing Open-Source LLMs:
-   - Open-source Large Language Models (LLMs) have been employed to enhance the analytical capabilities of the cafe.
+6. Utilizing LLMs:
+   - Large Language Models (LLMs) have been employed to enhance the analytical capabilities of the cafe.
    - These LLMs have been used to curate detailed analysis of the data, uncovering hidden insights and patterns that can provide a competitive edge in decision-making.
 
-By leveraging data analytics and AI, Ettarra Coffee aims to improve its operations, make data-driven decisions, and deliver a more personalized and engaging customer experience, ultimately driving growth and success in the competitive cafe market.
