@@ -2,9 +2,11 @@ import vertexai
 from vertexai.preview.generative_models import GenerativeModel, Part, FunctionDeclaration, Tool, Content
 import pandas as pd
 from typing import List, Dict
+from datetime import datetime
+
 
 def suggest_items(item_list: str):
-    df = pd.read_csv("item_list2.csv")
+    df = pd.read_csv("item_list3.csv")
     items = []
     for index, item in df.iterrows():
         if item["Names"] in item_list:
@@ -20,25 +22,46 @@ def suggest_items(item_list: str):
 
 
 def menu(items=None) -> Dict[str, List[str]]:
-    df = pd.read_csv("item_list2.csv")
+    df = pd.read_csv("item_list3.csv")
     return {"Menu": df["Names"].to_list()}
 
 # Specify a function declaration and parameters for an API request
 
 
+def get_user_history(items=None) -> Dict[str, List[str]]:
+    df = pd.read_csv("history.csv")
+    return {"History": sorted(df["name"].to_list(),reverse=True)}
+
+
 def add_to_cart(items: List[str]) -> Dict[str, str]:
-        return {"Status": "Success"}
+    df = pd.read_csv("history.csv")
+    if items:
+        for item in items:
+            # row = pd.DataFrame({"timestamp": datetime.now(), "name": item})
+            # df = pd.concat([df, row]).reset_index(drop=True)
+            row = pd.DataFrame([[datetime.now(), item]], columns=['timestamp', 'name'])
+            df = pd.concat([df, row]).reset_index(drop=True)
+    df.to_csv("history.csv")
+    return {"Status": "Success"}
 
 
 def instantiate_tools() -> List[Tool]:
     get_current_products_func = FunctionDeclaration(
         name="get_product_list",
         description="Get the complete menu of the cafe to be able to suggest items. Call this function always when no other function is called.",
-        # Function parameters are specified in OpenAPI JSON schema format
         parameters={
             "type": "object",
             "properties": {"items": {"type": "string"}},
         },
+    )
+
+    get_user_history_func = FunctionDeclaration(
+        name="get_user_history",
+        description="Get history of user to get items ordered in the past",
+        parameters={
+            "type": "object",
+            "properties": {"items": {"type": "string"}}
+        }
     )
 
     add_to_cart_func = FunctionDeclaration(
@@ -50,25 +73,14 @@ def instantiate_tools() -> List[Tool]:
         }
     )
 
-    # suggest_items_func = FunctionDeclaration(
-    #     name="suggest_items",
-    #     description="Send user suggestions. Input must be a string having atleast 3 menu items. Use this function to send user final suggestions.",
-    #     parameters={
-    #         "type": "object",
-    #         "properties": {"item_list": {"type": "string"}}
-    #     }
-    # )
-
-    # Define a tool that includes the above get_current_weather_func
     cafe_tool = Tool(
-        function_declarations=[add_to_cart_func,get_current_products_func ],
+        function_declarations=[add_to_cart_func, get_current_products_func, get_user_history_func],
     )
-
 
     return [cafe_tool]
 
 
-def send_message_no(prompt:str)->str:
+def send_message_no(prompt: str) -> str:
     intro_prompt = """
     You are an AI assistant.
     You are hired by 'Ettara Cafe' to guide users on the website and help them recommend products of their preference.
