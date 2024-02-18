@@ -1,5 +1,3 @@
-Based on the given context and problem statement 4 (PS4), here is an extended context:
-
 The cafe, Ettarra Coffee, aims to enhance its operations, decision-making, and customer engagement strategies by leveraging data analytics and AI. To achieve this, the following steps have been taken:
 
 1. Customer Reviews and Competitor Analysis:
